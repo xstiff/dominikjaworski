@@ -1,0 +1,40 @@
+$bg-color: #273A57;
+$font: 'Inconsolata', monospace;
+$border-color: #344969;
+
+.LeftSideContainer {
+    display: flex;
+    background-color: $bg-color;
+    width:330px;
+    box-sizing: border-box;
+    border-right:  1px solid $border-color;
+
+    
+    .LeftSideNavigation {
+        width:55px;
+        border-right:  1px solid $border-color;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        svg { 
+            fill: white;
+            width: 32px;
+        }
+
+        .FileSvg {
+            margin-top: 10px;
+        }
+        .UserSVG {
+            margin-top: auto;
+            
+        }
+        .SettingsSVG { 
+            margin: 10px 0px;
+        }
+
+        
+    }
+}
+
+
