@@ -3,7 +3,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   staticPageGenerationTimeout: 180, 
-  distDir: 'build',
+  images: {
+    unoptimized: true,
+  },
+  // distDir: 'build',
   output: "export"
 };
 

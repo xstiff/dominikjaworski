@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeVisible } from "./slices/interfaceSlice";
 import { RootState } from "./store/store";
 import { TopBar } from "./components/TopBar/TopBar";
-import { LeftSide } from "./components/LeftSide/LeftSide";
-import { RightSide } from "./components/RightSide/RightSide";
 import { Middle } from "./components/Middle/Middle";
 
 export default function Home() {
