@@ -10,9 +10,9 @@ import React from 'react'
 
 
 type IconsInContainerType = {
-    children: React.ReactNode,
-    clickFunc?: ()=> void,
-    activeIconNumber?: interfaceSliceType['currentlyChosenNav'],
+    children: React.ReactNode
+    clickFunc?: ()=> void
+    activeIconNumber?: interfaceSliceType['currentlyChosenNav']
     selector?: RootState
     marginAuto?: Boolean
 }
@@ -64,12 +64,8 @@ export const LeftSide = () => {
                     <SettingsSvg className="SettingsSVG" />
                 </IconsInContainer>
             </div>
-
-
                 {selector.interface.currentlyChosenNav === 1 && <ExplorerWindow />}
                 {selector.interface.currentlyChosenNav === 2 && <SearchWindow />}
-
-
         </div>
     )
 }
