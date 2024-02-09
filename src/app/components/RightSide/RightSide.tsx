@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './RightSide.scss';
 
 
-const DefaultEditorText = "Lorem ipsum dolor sit amet consectetur adipisicing elit.\nPorro qui aperiam corrupti distinctio quo quaerat, amet aut quos tenetur soluta exercitationem perspiciatis libero sed vitae eaque expedita sapiente, dolorum voluptatem."
+const DefaultEditorText = "Lorem ipsum dolor sit amet consectetur adipisicing elit.\nPorro qui aperiam corrupti distinctio quo quaerat, amet aut quos tenetur\n soluta exercitationem perspiciatis libero sed vitae eaque expedita sapiente, dolorum voluptatem."
 
 
 const Top = () => {
@@ -15,24 +15,28 @@ const Top = () => {
 
 const Editor = () => {
     const [content, setContent] = useState(DefaultEditorText);
-    
-    const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setContent(event.target.value);
-    };
+    const [lineCount, setLineCount] = useState(3);
 
-    const generateLineNumbers = () => {
-        const lines = content.split('\n');
-        return lines.map((_, index) => <div className='EditorNumbers' key={index}>{index + 1}</div>);
+    const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const text = event.target.value;
+        const LineNumber = (text.split('\n').length+1);
+        setContent(text);
+        setLineCount(LineNumber);
     };
 
     return (
         <div className='RightSideEditorContainer'>
-            {/* <div className='EditorNumbersContainer'>{generateLineNumbers()}</div> */}
+            <div className='EditorNumbersContainer'>
+                {Array.from({length: lineCount}).map((_, index) => (
+                    <span key={index}></span>
+                ))}
+            </div>
             <textarea
                 className='EditorArea'
                 value={content}
                 onChange={handleTextChange}
                 spellCheck={false}
+                wrap={"off"}
             />
         </div>
     );
