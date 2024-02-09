@@ -1,0 +1,67 @@
+$bg-color: #273A57;
+$border-color: #3e5475;
+$font: 'Roboto', sans-serif;
+$header-size: 13px;
+$folder-size: 13px;
+
+
+.LeftSideExplorer {
+    background-color: $bg-color;
+    border-right:  1px solid $border-color;
+    width:275px;
+    font-family: $font;
+ 
+
+    p { 
+        margin: 0;
+    }
+
+    .ExplorerHeader {
+        font-weight: 100;
+        color:#fff;
+        font-size: 13px;
+        width:100%;
+        padding-left: 5%;
+        user-select: none;
+        margin: 15px 0px 15px 0px
+    }
+
+    .ExplorerFolder {
+        width: 100%;
+        color: #fff;
+        font-size: $folder-size;
+        
+        cursor: pointer;
+        box-sizing: border-box;
+        
+        .ExplorerFolderName {
+            width:100%;
+
+
+            &:hover {
+                background-color: rgba(255,255,255,0.1);
+                transition: all ease-in-out .15s;
+            }
+
+        }
+
+        .depth-1 {
+            padding: 2px 0px 2px 20px;  
+        }
+        .depth-2 {
+            padding: 2px 0px 2px 30px;
+        }
+        .depth-3 {
+            padding: 2px 0px 2px 40px;
+        }
+        .depth-4 {
+            padding: 2px 0px 2px 50px;
+        }
+        .depth-5 {
+            padding: 2px 0px 2px 60px;
+        }
+
+    }
+    
+}
+

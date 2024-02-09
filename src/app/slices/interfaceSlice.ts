@@ -13,7 +13,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isVisible: false,
 
-  currentlyChosenNav: 0 // 0 - nothing, 1 - file, 2 - search
+  currentlyChosenNav: 1 // 0 - nothing, 1 - file, 2 - search
 };
 
 export type interfaceSliceType = { 

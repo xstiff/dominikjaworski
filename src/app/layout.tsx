@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 const inter = Inter({ subsets: ["latin"] });
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
 
 export const metadata: Metadata = {
   title: "Dominik Jaworski",

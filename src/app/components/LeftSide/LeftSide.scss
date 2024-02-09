@@ -1,6 +1,6 @@
 $bg-color: #273A57;
-$font: 'Inconsolata', monospace;
 $border-color: #3e5475;
+$font: 'Inconsolata', monospace;
 $inactive-fill: #adadad;
 $active-fill: #fff;
 
@@ -62,14 +62,5 @@ $active-fill: #fff;
                 fill: $active-fill;
             }
         }
-    }
-
-    // RIGHT SIDE
-
-    .LeftSideExplorer {
-        background-color: $bg-color;
-        border-right:  1px solid $border-color;
-        width:275px;
-        // flex:1;
     }
 }
