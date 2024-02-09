@@ -8,9 +8,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // })
 // + extraReducers ( builder ) addcase fulfiled pending canceled
 
+
+
 const initialState = {
   isVisible: false,
+
+  currentlyChosenNav: 0 // 0 - nothing, 1 - file, 2 - search
 };
+
+export type interfaceSliceType = { 
+    isVisible: false | true
+    currentlyChosenNav: 0 | 1 | 2
+}
 
 
 const interfaceSlice = createSlice({
@@ -19,10 +28,16 @@ const interfaceSlice = createSlice({
     reducers: {
         changeVisible: (state) => {
             state.isVisible = !state.isVisible
+        },
+
+        choseNav: (state, { payload } : {payload: interfaceSliceType['currentlyChosenNav'] }) => {
+            console.log("Runinng")
+            if (payload === state.currentlyChosenNav) state.currentlyChosenNav = 0;
+            else state.currentlyChosenNav = payload;
         }
     },
 })
 
 
-export const {changeVisible} = interfaceSlice.actions;
+export const {changeVisible, choseNav} = interfaceSlice.actions;
 export default interfaceSlice.reducer;

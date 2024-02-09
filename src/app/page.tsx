@@ -9,7 +9,7 @@ export default function Home() {
 
   const selector = useSelector( (State: RootState) => State.interface)
   const dispatch = useDispatch();
-  const changeVisibility = () => dispatch(changeVisible());
+  // const changeVisibility = () => dispatch(changeVisible());
 
   return (
     <div className="main-container">

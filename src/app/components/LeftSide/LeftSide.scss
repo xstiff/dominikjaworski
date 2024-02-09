@@ -1,40 +1,76 @@
 $bg-color: #273A57;
 $font: 'Inconsolata', monospace;
 $border-color: #344969;
+$inactive-fill: #adadad;
+$active-fill: #fff;
+
 
 .LeftSideContainer {
     display: flex;
-    background-color: $bg-color;
-    width:330px;
+    flex-direction: row;
+    background-color: transparent;
+    width:auto;
     box-sizing: border-box;
-    border-right:  1px solid $border-color;
-
     
+    // LEFT SIDE 
+
     .LeftSideNavigation {
         width:55px;
         border-right:  1px solid $border-color;
         display: flex;
         align-items: center;
         flex-direction: column;
+        background-color: $bg-color;
+
+        .LeftSideIconContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 6px 0;
+            margin-top: 5px;
+            position: relative;
+
+            &:last-child {
+                margin-bottom: 10px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 3px;
+                background-color: transparent;
+
+            }
+        
+            &.active::before {
+                background-color: rgb(42, 124, 247);
+            }
+
+            &.active svg {
+                fill: $active-fill;
+            }
+        }
 
         svg { 
-            fill: white;
+            fill: $inactive-fill;
             width: 32px;
+            &:hover {
+                fill: $active-fill;
+            }
         }
+    }
 
-        .FileSvg {
-            margin-top: 10px;
-        }
-        .UserSVG {
-            margin-top: auto;
-            
-        }
-        .SettingsSVG { 
-            margin: 10px 0px;
-        }
+    // RIGHT SIDE
 
-        
+    .LeftSideExplorer {
+        background-color: $bg-color;
+        border-right:  1px solid $border-color;
+        width:275px;
+        // flex:1;
     }
 }
-
-

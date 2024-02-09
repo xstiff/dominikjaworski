@@ -22,7 +22,6 @@ const VSCodeLogo = () => {
 
 
 export const TopBar = () => {
-    
     return(
         <div className="TopBarContainer">
             <VSCodeLogo />
@@ -36,6 +35,9 @@ export const TopBar = () => {
                 <TopBarLink name="Terminal"/>
                 <TopBarLink name="Help"/>
             </ul>
+            <div className="TopBarNavigation">
+
+            </div>
         </div>
     )
 }
