@@ -17,11 +17,13 @@ $editor-font-color: #fff;
     .RightSideTopContainer {
         height: 50px; // TEMPORARY !!!
         display: flex;
-        justify-content: center;
+        justify-content: left;
+        margin-left: 15px;
         width: 100%;
         // background: purple;
         border-bottom: 1px solid $border-color;
         font-family: $font;
+        color:#fff;
     }
 
     // Editor

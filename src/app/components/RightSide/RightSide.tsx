@@ -8,7 +8,7 @@ const DefaultEditorText = "This web app is not ready for mobile devices *yet*\nL
 const Top = () => {
     return (
         <div className='RightSideTopContainer'>
-            <p>Top</p>
+            <p>Main {">"} src {">"} Home {">"} home.txt</p>
         </div>
     );
 };

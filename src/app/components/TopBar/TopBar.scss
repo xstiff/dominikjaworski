@@ -12,7 +12,30 @@ $menu-distance-between-links: 10px;
 .TopBarLink-li {
     list-style: none;
     margin-left: $menu-distance-between-links;
-    
+    position: relative;
+
+    .TopBarLinkDropDown {
+        position: absolute;
+        top:20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: #283a55;
+        color: $menu-color;
+        border-radius: 3px;
+        border: 1px solid #545f70;
+        width:300px;
+        a {
+            padding: 10px;
+            user-select: none;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(0,0,0,0.2);
+            }
+        }
+    }
+
+
     &:first-of-type {
         margin-left: 0px;
     }
@@ -22,6 +45,8 @@ $menu-distance-between-links: 10px;
         font-size: $menu-font-size;
         padding: 5px;
         cursor: pointer;
+        user-select: none;
+
 
         &:hover {
             background-color: $menu-color-bg;

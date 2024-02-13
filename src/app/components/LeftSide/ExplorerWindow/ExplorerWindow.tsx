@@ -2,6 +2,11 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import './ExplorerWindow.scss'
+import { toggleFolder } from '@/app/slices/interfaceSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/app/store/store';
+
+
 
 type FolderProps = {
     children: React.ReactNode;
@@ -29,14 +34,13 @@ const ExplorerFolder: React.FC<FolderProps> = ({ children, depth = 1, isBold = f
 };
 
 export const ExplorerWindow: React.FC = () => {
-    const [folderStates, setFolderStates] = useState<{ [key: string]: boolean }>({});
-
-    const toggleFolder = (folderName: string) => {
-        setFolderStates(prevStates => ({
-            ...prevStates,
-            [folderName]: !prevStates[folderName]
-        }));
+    const folderStates = useSelector((state: RootState) => state.interface.folderStates)
+    const dispatch = useDispatch()
+    const folderT = (folderName: string) => {
+        dispatch(toggleFolder(folderName))
     };
+
+    
 
     return (
         <div className='LeftSideExplorer'>
@@ -44,12 +48,12 @@ export const ExplorerWindow: React.FC = () => {
                 <p>EXPLORER</p>
             </div>
             <div className='ExplorerListContainer'>
-                <ExplorerFolder name="Main" isOpen={folderStates["Main"] || false}onToggle={(folderName) => toggleFolder(folderName)}>
-                    <ExplorerFolder name="Subfolder 1" isOpen={folderStates["Subfolder 1"] || false} onToggle={(folderName) => toggleFolder(folderName)}>
-                        <div className='depth-4'>Child 1</div>
+                <ExplorerFolder name="Main" isOpen={folderStates["Main"] || false}onToggle={(folderName) => folderT(folderName)}>
+                    <ExplorerFolder name="Subfolder 1" isOpen={folderStates["Subfolder 1"] || false} onToggle={(folderName) => folderT(folderName)} depth={3}>
+                        <div className='child depth-4'>Child 1</div>
                     </ExplorerFolder>
-                    <ExplorerFolder name="Subfolder 2" isOpen={folderStates["Subfolder 2"] || false} onToggle={(folderName) => toggleFolder(folderName)}>
-                        <div className='depth-4'>Child 3</div>
+                    <ExplorerFolder name="Subfolder 2" isOpen={folderStates["Subfolder 2"] || false} onToggle={(folderName) => folderT(folderName)} depth={3}>
+                        <div className='child depth-4'>Child 3</div>
                     </ExplorerFolder>
                 </ExplorerFolder>
             </div>
